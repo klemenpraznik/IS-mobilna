@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#fff"
+    tools:context=".DisplayClient">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/ic_launcher_round" />
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/line"
+        android:layout_height="1dp"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line"
+        android:layout_marginTop="20dp"
+        android:text="Title"
+        android:textColor="#000"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/type"
+        android:layout_marginTop="10dp"
+        android:autoLink="web|email"
+        android:linksClickable="true"
+        android:text="Email"
+        android:textColor="@color/colorGray"
+        android:textColorLink="@color/colorGray"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="10dp"
+        android:autoLink="web|email"
+        android:linksClickable="true"
+        android:text="Tip stranke"
+        android:textColor="@color/colorGray"
+        android:textColorLink="@color/colorGray"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phone"
+        android:layout_marginTop="10dp"
+        android:autoLink="phone"
+        android:linksClickable="true"
+        android:text="Naslov"
+        android:textColor="@color/colorGray"
+        android:textColorLink="@color/colorGray"
+        android:textSize="18sp" />
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/address"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/darker_gray" />
+
+    <RadioButton
+        android:id="@+id/taxPayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line2"
+        android:layout_marginTop="21dp"
+        android:text="Davčni zavezanec"
+        android:textColor="@color/colorGray" />
+
+    <TextView
+        android:id="@+id/taxNumber"
+        android:layout_width="243dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line2"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@+id/taxPayer"
+        android:layout_toRightOf="@+id/taxPayer"
+        android:text="Davčna številka"
+        android:textColor="@color/colorGray"
+        android:textColorLink="@color/colorGray"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/clientRegistrationNumber"
+        android:layout_width="215dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/taxNumber"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="9dp"
+        android:layout_toEndOf="@+id/taxPayer"
+        android:layout_toRightOf="@+id/taxPayer"
+        android:text="Matična številka"
+        android:textColor="@color/colorGray"
+        android:textColorLink="@color/colorGray"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description"
+        android:layout_marginTop="10dp"
+        android:autoLink="phone"
+        android:linksClickable="true"
+        android:text="Telefonska številka"
+        android:textColor="@color/colorGray"
+        android:textColorLink="@color/colorGray"
+        android:textSize="18sp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="94dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:onClick="editClient"
+        android:tint="@color/colorWhite"
+        app:backgroundTint="#009688"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonDelete"
+        android:layout_width="94dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:onClick="deleteClient"
+        android:tint="@color/colorWhite"
+        app:backgroundTint="@color/colorRed"
+        app:srcCompat="@android:drawable/ic_delete" />
+
+</RelativeLayout>
